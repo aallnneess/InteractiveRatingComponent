@@ -1,0 +1,35 @@
+<div class="flex flex-col">
+
+  <!-- Icon -->
+  <div class="pb-4">
+    <img class="bg-Medium-Grey bg-opacity-10 rounded-full p-3" src="assets/images/icon-star.svg" alt="star-icon">
+  </div>
+
+
+  <!-- Headline -->
+  <p class="text-White font-bold text-2xl pb-2">How did we do ?</p>
+
+  <!-- Infotext -->
+  <p class="text-Light-Grey text-sm pb-6">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+
+  <!-- Button container -->
+  <div class="flex justify-between">
+
+    <!-- Dynamic creation of the buttons -->
+    <ng-container *ngFor="let button of buttons; let i=index">
+
+      <!-- Could also be a separate button component -->
+      <button [ngClass]="activeButton === i ? 'bg-Light-Grey text-White' : 'text-Light-Grey bg-Medium-Grey bg-opacity-10'" class="w-11 h-11 rounded-full p-3 hover:bg-Orange hover:bg-opacity-100 hover:text-White" (click)="setActive(i)">
+        <p class="">{{i + 1}}</p>
+      </button>
+
+    </ng-container>
+
+  </div>
+
+  <button class="mt-4 p-3 text-White bg-Orange rounded-full hover:bg-White hover:text-Orange" (click)="submit()">
+    <span class="font-semibold text-sm tracking-[.125em]">SUBMIT</span>
+  </button>
+
+
+</div>
